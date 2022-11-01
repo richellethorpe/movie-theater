@@ -10,7 +10,7 @@
 <form>
   <!-- Movie selection -->
   <label for="movie-title">Choose a movie:</label>
-  <select name="movie-title">
+  <select name="movie-title" id="movie-title">
     <option value="ticketToRide">Ticket To Ride</option>
     <option value="hackers">Hackers</option>
     <option value="theNet">The Net</option>
@@ -35,11 +35,11 @@
   </label>  
   <!-- Age selection -->
   <p>Golden Ticket Elligibility</p>
-  <input type="radio" name="seniorId" id="isSenior">
+  <input type="radio" name="seniorId" value="senior">
   <label for="seniorId">
     65+
   </label>
-  <input type="radio" name="seniorId" id="notSenior">
+  <input type="radio" name="seniorId" value="adult">
   <label for="seniorId">
     under 65
   </label>

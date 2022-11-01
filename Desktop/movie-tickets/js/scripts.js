@@ -40,9 +40,33 @@ function checkMatineeDiscount(time, price) {
 };
 
 function checkGoldenDiscount(age, price) {
-  if (age === "65+") {
+  if (age === "senior") {
     return price - 2;
   } else {
     return price;
   }
 }
+
+// user interface logic
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const movieTitle = document.getElementById('movie-title').value;
+  const movieTime = document.querySelector('input[name=movieTime]:checked').value;
+  const age = document.querySelector('input[name=seniorId]:checked').value;  
+  const ticket = new Ticket (movieTitle, movieTime, age);
+
+  let price = getPrice(ticket);
+
+  document.getElementById('ticketType').innerText = age;
+  document.getElementById('movie').innerText = movieTitle;
+  document.getElementById('time').innerText = movieTime;
+  document.getElementById('price').innerText = price + "$";
+
+  document.getElementById('results').removeAttribute('class');
+}
+
+window.addEventListener('load', function() {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);  
+})
