@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link href="./css/styles.css" type="text/css" rel="stylesheet">
+  <script src="./js/scripts.js"></script>
+  <title>Movie Tickets</title>
+</head>
+<body>
+<h1>Movie tickets selection:</h1>
+<form>
+  <!-- Movie selection -->
+  <label for="movie-title">Choose a movie:</label>
+  <select name="movie-title">
+    <option value="ticketToRide">Ticket To Ride</option>
+    <option value="hackers">Hackers</option>
+    <option value="theNet">The Net</option>
+  </select>
+  <!-- Time of Day selection -->
+  <p>What time do you want to see your movie?</p>
+  <label>
+    <input type="radio" name="movieTime" value="1pm-Matinee">
+    1pm Matinee Show
+  </label>  
+  <label>
+    <input type="radio" name="movieTime" value="7pm">
+    7pm
+  </label>  
+  <label>
+    <input type="radio" name="movieTime" value="9pm">
+    9pm
+  </label>  
+  <label>
+    <input type="radio" name="movieTime" value="11pm">
+    11pm
+  </label>  
+  <!-- Age selection -->
+  <p>Golden Ticket Elligibility</p>
+  <input type="radio" name="seniorId" id="isSenior">
+  <label for="seniorId">
+    65+
+  </label>
+  <input type="radio" name="seniorId" id="notSenior">
+  <label for="seniorId">
+    under 65
+  </label>
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+<div id="results" class="hidden">
+<h2> The cost for a <span id="ticketType"></span>ticket <span id="movie"></span> at <span id="time"></span> is <span id="price"></span></h2>
+
+</div>
+
+</body>
+</html>
