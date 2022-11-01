@@ -39,11 +39,29 @@ Test: "It should return ticket object with the keys: movie title, movie time, pa
 Code: let newTicket = new Ticket("Ticket to Ride", "11pm", "65+")
 Expected Output: Ticket {title: "Ticket to Ride", time: "11pm", age: "65+"}
 
-Describe:
+//create user input to select name of movie; new release = $18, oldieButAGoodie = $10
+//time of day to see movie; mantinee = $2 discount
+//user age 65+ = another $2 discount
 
-Test:
-Code:
-Expected Output: 
+Describe: ticketPrice()
+Test:"If user selects a new release movie, it will return a cost of $18."
+Code:ticketPrice("Ticket to Ride")
+Expected Output: $18
+
+Test:"If user selects a vintage movie, it will return a cost of $10."
+Code:ticketPrice("The Net")
+Expected Output: $10
+
+Test:"If user selects a matinee movie, it will return a cost of $8."
+Code:ticketPrice("6pm")
+Expected Output: $8
+
+Describe: goldenDiscount
+
+Test: "If user is over age 65, it will return a discount of $2."
+Code: checkGoldenDiscount("65+", 18)
+Expected Output: 16
+
 ```
 ## Known Bugs
 
