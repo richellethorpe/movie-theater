@@ -62,6 +62,14 @@ Test: "If user is over age 65, it will return a discount of $2."
 Code: checkGoldenDiscount("65+", 18)
 Expected Output: 16
 
+Describe:  getPrice()
+
+Test: "It should return discounted price if vintage, a matine, or golden ticket"
+Code: 
+let newTicket = new Ticket("ticketToRide", "1pm-Matinee", "65+")
+getPrice(newTicket);
+Expected Output: 14
+
 ```
 ## Known Bugs
 

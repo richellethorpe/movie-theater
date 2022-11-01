@@ -12,8 +12,18 @@ function Ticket(title, time, age) {
   this.age = age;
 }
 
-function ticketPrice(title){
+function getPrice(ticket) {
   let price = 18;
+  price = checkReleasePrice(ticket.title, price);
+  console.log("after Release discount" + price);
+  price = checkMatineeDiscount(ticket.time, price);
+  console.log("after Matinee discount" + price);
+  price = checkGoldenDiscount(ticket.age, price);
+  console.log("after Golden discount" + price);
+  return price;
+}
+
+function checkReleasePrice(title, price){
   if (title === "ticketToRide") {
   return price
 } else {
@@ -21,7 +31,7 @@ function ticketPrice(title){
 }
 };
 
-function discount(time, price) {
+function checkMatineeDiscount(time, price) {
   if (time === "1pm-Matinee") {
     return price - 2
   } else {
@@ -30,7 +40,7 @@ function discount(time, price) {
 };
 
 function checkGoldenDiscount(age, price) {
-  if (age === "65+"){
+  if (age === "65+") {
     return price - 2;
   } else {
     return price;
